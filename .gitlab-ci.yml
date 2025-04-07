@@ -1,0 +1,15 @@
+stages:
+  - deploy
+
+variables:
+  IMAGE_NAME: "95337/barista_cafe:v3"
+  KUBE_CONFIG: $KUBE_CONFIG
+
+deploy:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    - echo "$KUBE_CONFIG" | base64 -d > kubeconfig
+    - export KUBECONFIG=kubeconfig
+    - kubectl set image deployment/barista-cafe-deployment barista-cafe=$IMAGE_NAME
+    - kubectl rollout status deployment/barista-cafe-deployment
