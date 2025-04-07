@@ -7,7 +7,7 @@ variables:
 
 deploy:
   stage: deploy
-  image: bitnami/kubectl:v3
+  image: lachlanevenson/k8s-kubectl:v1.27.4
   script:
     - echo "$KUBE_CONFIG" | base64 -d > kubeconfig
     - export KUBECONFIG=kubeconfig
