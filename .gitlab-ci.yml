@@ -1,18 +1,5 @@
-stages:
-  - deploy
-
-deploy:
-  image: alpine/k8s:1.27.4
-  tags:
-    - k8s
-    - local
-  stage: deploy
-  before_script:
-    - echo "$KUBECONFIG" > kubeconfig
-    - export KUBECONFIG=$CI_PROJECT_DIR/kubeconfig
+test_runner:
+  stage: test
+  image: alpine
   script:
-    - kubectl version --client
-    - kubectl apply -f backend-deployment.yaml
-    - kubectl apply -f frontend-deployment.yaml
-  only:
-    - main
+    - echo "Runner is working!"
