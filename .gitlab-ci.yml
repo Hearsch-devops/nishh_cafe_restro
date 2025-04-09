@@ -1,0 +1,14 @@
+stages:
+  - deploy
+
+deploy_to_k8s:
+  image: bitnami/kubectl:latest
+  stage: deploy
+  before_script:
+    - echo "$KUBECONFIG" > kubeconfig
+    - export KUBECONFIG=$CI_PROJECT_DIR/kubeconfig
+  script:
+    - kubectl apply -f backend-deployment.yaml
+    - kubectl apply -f frontend-deployment.yaml
+  only:
+    - main
