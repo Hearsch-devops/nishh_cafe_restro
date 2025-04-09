@@ -1,7 +1,18 @@
-local_runner_test:
-  stage: test
+stages:
+  - deploy
+
+deploy:
+  image: alpine/k8s:1.27.4
   tags:
     - k8s
+    - local
+  stage: deploy
+  before_script:
+    - echo "$KUBECONFIG" > kubeconfig
+    - export KUBECONFIG=$CI_PROJECT_DIR/kubeconfig
   script:
-    - hostname
-    - kubectl get nodes
+    - kubectl version --client
+    - kubectl apply -f backend-deployment.yaml
+    - kubectl apply -f frontend-deployment.yaml
+  only:
+    - main
