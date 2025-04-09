@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: barista-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: barista-frontend
+  template:
+    metadata:
+      labels:
+        app: barista-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: 95337/barista_cafe:v3
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: barista-frontend-service
+spec:
+  selector:
+    app: barista-frontend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
