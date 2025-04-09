@@ -1,6 +1,7 @@
 stages:
   - deploy
-
+tags:
+  - k8
 deploy_to_kubernetes:
   image: alpine/k8s:1.27.4
   stage: deploy
