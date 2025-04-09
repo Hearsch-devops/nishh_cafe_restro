@@ -1,7 +1,7 @@
 stages:
   - deploy
 
-deploy_to_k8s:
+deploy_to_kubernetes:
   image: bitnami/kubectl:latest
   stage: deploy
   before_script:
