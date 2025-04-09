@@ -1,19 +1,6 @@
-stages:
-  - deploy
-
-deploy:
-  image: alpine/k8s:1.27.4
+test_kubectl:
+  stage: test
   tags:
     - k8s
-    - local
   script:
-    - kubectl apply -f frontend-deployment.yaml --validate=false
-  stage: deploy
-  before_script:
-    - echo "$KUBECONFIG" > kubeconfig
-    - export KUBECONFIG=$CI_PROJECT_DIR/kubeconfig
-  script:
-    - kubectl version --client
-    - kubectl apply -f frontend-deployment.yaml
-  only:
-    - main
+    - kubectl get nodes
