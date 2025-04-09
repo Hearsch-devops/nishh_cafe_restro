@@ -3,8 +3,6 @@ stages:
 
 deploy_to_kubernetes:
   image: alpine/k8s:1.27.4
-  script:
-    - kubectl apply --validate=false --insecure-skip-tls-verify -f backend-deployment.yaml
   tags:
     - k8s
     - local
