@@ -6,6 +6,8 @@ deploy:
   tags:
     - k8s
     - local
+  script:
+    - kubectl apply -f frontend-deployment.yaml --validate=false
   stage: deploy
   before_script:
     - echo "$KUBECONFIG" > kubeconfig
