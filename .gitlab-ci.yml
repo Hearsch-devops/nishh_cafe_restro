@@ -4,7 +4,8 @@ stages:
 deploy_to_kubernetes:
   image: alpine/k8s:1.27.4
   tags:
-    - k8
+    - k8s
+    - local
   stage: deploy
   before_script:
     - echo "$KUBECONFIG" > kubeconfig
