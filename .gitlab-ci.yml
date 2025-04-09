@@ -1,5 +1,7 @@
-test_runner:
+local_runner_test:
   stage: test
-  image: alpine
+  tags:
+    - k8s
   script:
-    - echo "Runner is working!"
+    - hostname
+    - kubectl get nodes
