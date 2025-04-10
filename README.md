@@ -1,1 +1,1 @@
-This project demonstrates a full CI/CD pipeline using GitLab to deploy a containerized restaurant website, including a frontend and a backend service, to a Kubernetes cluster.
+This project demonstrates a full CI/CD pipeline using GitLab to deploy a containerized restaurant website, including a frontend and a backend service, to a Kubernetes cluster..
