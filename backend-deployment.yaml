@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: barista-backend
-          image: 95337/barista-backend:latest
+          image: 95337/barista-backend:v2
           ports:
             - containerPort: 5000
 ---
