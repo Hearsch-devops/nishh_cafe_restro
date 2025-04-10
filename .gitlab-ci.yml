@@ -8,11 +8,9 @@ deploy:
     - local
   stage: deploy
   before_script:
-    - echo "$KUBECONFIG" > kubeconfig
-    - export KUBECONFIG=$CI_PROJECT_DIR/kubeconfig
+  - mkdir -p ~/.kube
+  - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
   script:
-    - mkdir -p ~/.kube
-    - cp /path/to/kubeconfig ~/.kube/config
     - kubectl apply -f backend-deployment.yaml
     - kubectl version --client
     - kubectl apply -f frontend-deployment.yaml
