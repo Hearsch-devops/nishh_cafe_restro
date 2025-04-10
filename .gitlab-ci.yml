@@ -2,16 +2,22 @@ stages:
   - deploy
 
 deploy:
-  stage: deploy
+  image: alpine/k8s:1.29.15
   tags:
     - k8s
     - local
+  stage: deploy
+  before_script:
+    - echo "$KUBECONFIG" > kubeconfig
+    - export KUBECONFIG=$CI_PROJECT_DIR/kubeconfig
   script:
-    - echo "Deploying backend..."
-    - kubectl apply -f backend-deployment.yaml --validate=false
-    - kubectl apply -f backend-service.yaml --validate=false
-    - echo "Deploying frontend..."
-    - kubectl apply -f frontend-deployment.yaml --validate=false
-    - kubectl apply -f frontend-service.yaml --validate=false
+    - kubectl version --client
+    - kubectl apply -f backend-deployment.yaml
+    - kubectl apply -f frontend-deployment.yaml
+  after_script:
+    - echo "Deployed frontend..."
+    - echo "Deployed backend..."
+  only:
+    - main
 
 
