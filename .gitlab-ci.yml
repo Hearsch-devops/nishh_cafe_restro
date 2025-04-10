@@ -11,12 +11,10 @@ deploy:
   - mkdir -p ~/.kube
   - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
   script:
-    - kubectl apply -f backend-deployment.yaml
     - kubectl version --client
     - kubectl apply -f frontend-deployment.yaml
   after_script:
     - echo "Deployed frontend..."
-    - echo "Deployed backend..."
   only:
     - main
 
