@@ -6,7 +6,7 @@ variables:
 
 deploy-frontend:
   stage: deploy
-  image: bitnami/kubectl:latest
+  image: alpine/k8s:1.29.15
   script:
     - echo "$KUBE_CONFIG_DATA" | base64 -d > $KUBECONFIG
     - kubectl apply -f frontend-deployment.yaml
@@ -15,7 +15,7 @@ deploy-frontend:
 
 deploy-backend:
   stage: deploy
-  image: bitnami/kubectl:latest
+  image: nginx/k8s:1.29.15
   script:
     - echo "$KUBE_CONFIG_DATA" | base64 -d > $KUBECONFIG
     - kubectl apply -f backend-deployment.yaml
