@@ -5,7 +5,7 @@ metadata:
   labels:
     app: barista
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: barista
@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: NodePort  # Change to LoadBalancer if using a cloud provider
+  type: NodePort
