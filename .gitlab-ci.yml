@@ -1,14 +1,19 @@
 stages:
   - deploy
 
-variables:
-  KUBECONFIG: "/builds/$CI_PROJECT_PATH/kubeconfig"
-
-deploy-backend:
+deploy:
+  image: alpine/k8s:1.29.15
+  tags:
+    - k8s
+    - local
   stage: deploy
-  image: bitnami/kubectl:1.29
+  before_script:
+  - mkdir -p ~/.kube
+  - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
   script:
-    - echo "$KUBE_CONFIG_DATA" | base64 -d > $KUBECONFIG
-    - kubectl apply -f backend-deployment.yaml
+    - kubectl version --client
+    - kubectl apply -f frontend-deployment.yaml
+  after_script:
+    - echo "Deployed frontend..."
   only:
     - main
