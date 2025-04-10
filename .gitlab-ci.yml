@@ -13,8 +13,11 @@ deploy:
   script:
     - kubectl version --client
     - kubectl apply -f frontend-deployment.yaml
+    - kubectl version --client
+    - kubectl apply -f backend-deployment.yaml
   after_script:
     - echo "Deployed frontend..."
+    - - echo "Deployed backend..."
   only:
     - main
 
