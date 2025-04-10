@@ -4,18 +4,9 @@ stages:
 variables:
   KUBECONFIG: "/builds/$CI_PROJECT_PATH/kubeconfig"
 
-deploy-frontend:
-  stage: deploy
-  image: alpine/k8s:1.29.15
-  script:
-    - echo "$KUBE_CONFIG_DATA" | base64 -d > $KUBECONFIG
-    - kubectl apply -f frontend-deployment.yaml
-  only:
-    - main
-
 deploy-backend:
   stage: deploy
-  image: nginx/kubectl:latest
+  image: image: lachlanevenson/k8s-kubectl:v1.29.0
   script:
     - echo "$KUBE_CONFIG_DATA" | base64 -d > $KUBECONFIG
     - kubectl apply -f backend-deployment.yaml
