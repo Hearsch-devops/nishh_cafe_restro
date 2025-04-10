@@ -12,7 +12,9 @@ deploy:
     - export KUBECONFIG=$CI_PROJECT_DIR/kubeconfig
   script:
     - kubectl version --client
+    - - kubectl apply -f backend-deployment.yaml --validate=false
     - kubectl apply -f backend-deployment.yaml
+    - - kubectl apply -f frontend-deployment.yaml --validate=false
     - kubectl apply -f frontend-deployment.yaml
   after_script:
     - echo "Deployed frontend..."
