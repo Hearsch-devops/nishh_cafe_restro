@@ -15,7 +15,7 @@ deploy-frontend:
 
 deploy-backend:
   stage: deploy
-  image: nginx/k8s:1.29.15
+  image: nginx/kubectl:latest
   script:
     - echo "$KUBE_CONFIG_DATA" | base64 -d > $KUBECONFIG
     - kubectl apply -f backend-deployment.yaml
