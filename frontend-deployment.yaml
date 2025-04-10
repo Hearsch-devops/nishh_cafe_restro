@@ -2,18 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: barista-frontend
+  labels:
+    app: barista
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: barista-frontend
+      app: barista
   template:
     metadata:
       labels:
-        app: barista-frontend
+        app: barista
     spec:
       containers:
-        - name: frontend
+        - name: barista-cafe
           image: 95337/barista_cafe:v3
           ports:
             - containerPort: 80
@@ -24,8 +26,9 @@ metadata:
   name: barista-frontend-service
 spec:
   selector:
-    app: barista-frontend
+    app: barista
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
+  type: NodePort  # Change to LoadBalancer if using a cloud provider
