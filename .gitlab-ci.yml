@@ -11,12 +11,15 @@ deploy:
   - mkdir -p ~/.kube
   - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
   script:
-    - kubectl apply -f k8s/postgres-deployment.yaml
-    - kubectl apply -f k8s/backend-deployment.yaml
-    - kubectl apply -f k8s/frontend-deployment.yaml
+    - kubectl apply -f barista_cafe_restro\postgres-deployment.yaml
+    - kubectl apply -f barista_cafe_restro\backend-deployment.yaml
+    - kubectl apply -f barista_cafe_restro\frontend-deployment.yaml
   after_script:
     - echo "Deployed postgres-deployment..."
     - echo "Deployed backend-deployment..."
     - echo "Deployed frontend-deployment..."
   only:
     - main
+
+
+    
