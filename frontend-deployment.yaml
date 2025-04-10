@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: barista-frontend
-          image: 95337/barista_cafe:v7
+          image: 95337/barista_cafe:v8
           ports:
             - containerPort: 80
 ---
