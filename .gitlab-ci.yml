@@ -1,21 +1,17 @@
 stages:
   - deploy
 
-deploy_backend:
+deploy:
   stage: deploy
   tags:
     - k8s
+    - local
   script:
     - echo "Deploying backend..."
     - kubectl apply -f backend-deployment.yaml --validate=false
     - kubectl apply -f backend-service.yaml --validate=false
-
-deploy_frontend:
-  stage: deploy
-  tags:
-    - k8s
-  script:
     - echo "Deploying frontend..."
     - kubectl apply -f frontend-deployment.yaml --validate=false
     - kubectl apply -f frontend-service.yaml --validate=false
+
 
