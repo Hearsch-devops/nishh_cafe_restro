@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-backend
-          image: 95337/barista-backend:v3
+          image: 95337/barista-backend:v4
           env:
             - name: DB_HOST
               value: postgres
