@@ -12,12 +12,18 @@ deploy:
   - echo "$KUBECONFIG_DATA" | base64 -d > ~/.kube/config
   script:
     - kubectl apply -f postgres-deployment.yaml
+    - kubectl apply -f postgres-service.yaml
     - kubectl apply -f backend-deployment.yaml
+    - kubectl apply -f backend-service.yaml
     - kubectl apply -f frontend-deployment.yaml
+    - kubectl apply -f frontend-service.yaml
+    - kubectl apply -f pgadmin-deployment.yaml
+    - kubectl apply -f pgadmin-service.yaml
   after_script:
-    - echo "Deployed postgres-deployment..."
-    - echo "Deployed backend-deployment..."
-    - echo "Deployed frontend-deployment..."
+    - echo "Deployed postgres..."
+    - echo "Deployed backend..."
+    - echo "Deployed frontend..."
+    - echo "Deployed pgadmin..."
   only:
     - main
 
