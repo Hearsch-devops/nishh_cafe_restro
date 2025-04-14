@@ -35,6 +35,6 @@ barista-reservations/ ├── backend/ │ ├── app.py │ ├── Dock
 | Backend      | Flask (Python)|
 | Database     | PostgreSQL    |
 | DevOps       | Docker + K8s  |
-| Monitoring   | Grafana + Prometheus (Coming Soon) |
+| Monitoring   | Grafana + Prometheus |
 
 ---
