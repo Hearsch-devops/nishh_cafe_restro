@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask-backend
-          image: 95337/barista-backend:v20
+          image: 95337/barista-backend:v21
           ports:
             - containerPort: 5000
           env:
