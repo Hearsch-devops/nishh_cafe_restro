@@ -19,11 +19,15 @@ deploy:
     - kubectl apply -f frontend-service.yaml
     - kubectl apply -f pgadmin-deployment.yaml
     - kubectl apply -f pgadmin-service.yaml
+    - kubectl apply -f kube-state-metrics.yaml
+    - kubectl apply -f postgres_exporter.yaml
+    - kubectl apply -f postgres_exporter_service.yaml
   after_script:
     - echo "Deployed postgres..."
     - echo "Deployed backend..."
     - echo "Deployed frontend..."
     - echo "Deployed pgadmin..."
+    - echo "postgres_exporter..."
   only:
     - main
 
