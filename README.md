@@ -15,6 +15,7 @@ POST /reservations – Submit a new reservation
 - 🐘 PostgreSQL for persistent storage
 - 🐳 Dockerized frontend and backend
 - ☸️ Kubernetes deployments
+- 🧭 Rancher-based Kubernetes management dashboard
 - 📡 CORS-enabled API for frontend integration
 - 🧪 Easy local and cluster testing
 
