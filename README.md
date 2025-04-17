@@ -12,7 +12,7 @@ POST /reservations – Submit a new reservation
 
 - 📋 Online table reservation form
 - 🔧 Python Flask backend (REST API)
-- 🐘 PostgreSQL database for storage
+- 🐘 PostgreSQL for persistent storage
 - 🐳 Dockerized frontend and backend
 - ☸️ Kubernetes deployments
 - 📡 CORS-enabled API for frontend integration
