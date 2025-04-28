@@ -23,7 +23,7 @@ POST /reservations – Submit a new reservation
 
 ## 🗂️ Project Structure
 
-barista-reservations/ ├── backend/ │ ├── app.py │ ├── Dockerfile │ ├── requirements.txt │ └── backend-deployment.yaml ├── frontend/ │ ├── index.html │ ├── reservation.html │ ├── Dockerfile │ └── frontend-deployment.yaml ├── postgres/ │ ├── postgres-deployment.yaml │ └── postgres-service.yaml |
+nishh-reservations/ ├── backend/ │ ├── app.py │ ├── Dockerfile │ ├── requirements.txt │ └── backend-deployment.yaml ├── frontend/ │ ├── index.html │ ├── reservation.html │ ├── Dockerfile │ └── frontend-deployment.yaml ├── postgres/ │ ├── postgres-deployment.yaml │ └── postgres-service.yaml |
 
 
 ---
