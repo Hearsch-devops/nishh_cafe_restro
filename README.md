@@ -1,4 +1,4 @@
-# ☕ Barista Reservations
+# ☕ Nishh Reservations
 
 A simple, containerized café table reservation system built with **Flask**, **PostgreSQL**, and deployed on **Kubernetes**. This project allows customers to reserve tables online via a modern frontend connected to a RESTful backend API..
 
