@@ -42,5 +42,5 @@ nishh-reservations/ ├── backend/ │ ├── app.py │ ├── Docker
 | Monitoring   | Grafana + Prometheus|
 
 ---
-📬 Contact
+
 Made with ❤️ by Hearsch-DevOps
