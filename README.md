@@ -7,6 +7,10 @@ A simple, containerized café table reservation system built with **Flask**, **P
 API Endpoints:
 GET /reservations – Get all reservations
 POST /reservations – Submit a new reservation
+---
+
+Screenshots path has been added to below file:
+nishh-cafe-screenshots.docx
 
 ---
 
