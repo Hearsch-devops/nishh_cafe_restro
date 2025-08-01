@@ -1,5 +1,7 @@
 # ☕ Nishh Reservations
 
+A DevOps project that simulates a restaurant application (`Nishh Café Restro`) with full automation using Docker, GitLab CI/CD, and container orchestration tools. This repository is designed to showcase modern DevOps practices, including containerization, CI/CD pipeline integration, and infrastructure automation.
+
 A simple, containerized café table reservation system built with **Flask**, **PostgreSQL**, and deployed on **Kubernetes**. This project allows customers to reserve tables online via a modern frontend connected to a RESTful backend API..
 
 API Endpoints:
@@ -40,3 +42,5 @@ nishh-reservations/ ├── backend/ │ ├── app.py │ ├── Docker
 | Monitoring   | Grafana + Prometheus|
 
 ---
+📬 Contact
+Made with ❤️ by Hearsch-DevOps
